@@ -4,10 +4,6 @@ build:
     docker: true
   steps:
     - script:
-        name: composer-setup-cache
+        name: docker-test
         code: |
-          composer config -g cache-dir $WERCKER_CACHE_DIR
-    - script:
-        name: composer-install
-        code: |
-          composer  --ignore-platform-reqs install
+          docker run --rm --name static-site --network=$DOCKER_NETWORK_NAME truesocialmetrics/casperjs casperjs --version
