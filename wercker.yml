@@ -1,0 +1,13 @@
+build:
+  box:
+    id: truesocialmetrics/ci
+    docker: true
+  steps:
+    - script:
+        name: composer-setup-cache
+        code: |
+          composer config -g cache-dir $WERCKER_CACHE_DIR
+    - script:
+        name: composer-install
+        code: |
+          composer  --ignore-platform-reqs install
