@@ -1,7 +1,6 @@
 build:
-  box:
-    id: truesocialmetrics/ci
-    docker: true
+  box: truesocialmetrics/ci
+  docker: true
   steps:
     - script:
         name: docker-test
