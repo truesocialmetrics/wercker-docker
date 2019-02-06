@@ -5,4 +5,4 @@ build:
     - script:
         name: docker-test
         code: |
-          docker run --rm --name static-site --network=$DOCKER_NETWORK_NAME truesocialmetrics/casperjs casperjs --version
+          docker run --rm --name static-site truesocialmetrics/casperjs casperjs --version
