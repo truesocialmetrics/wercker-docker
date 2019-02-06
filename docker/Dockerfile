@@ -4,6 +4,7 @@ MAINTAINER Rostislav Mykhajliw <necromant2005@gmail.com>
 
 # base
 RUN apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install \
+    curl \
     software-properties-common \
     ca-certificates
 
@@ -26,5 +27,7 @@ RUN apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 RUN apt-get update && apt-get install -y docker-ce
+
+COPY run.php /mnt/run.php
 
 CMD ["/bin/bash"]

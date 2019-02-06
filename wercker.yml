@@ -1,8 +1,8 @@
 build:
-  box: truesocialmetrics/ci
+  box: truesocialmetrics/wercker-docker
   docker: true
   steps:
     - script:
         name: docker-test
         code: |
-          docker run --rm --name static-site truesocialmetrics/casperjs casperjs --version
+          php /mnt/run.php
